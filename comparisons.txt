@@ -1,0 +1,23 @@
+Deterministic Policies:
+Q-Learning algorithm optimal policy
+[['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['D']]
+[['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['D']]
+[['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['D']]
+[['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['G'], ['R'], ['D']]
+[['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['D'], ['L'], ['L']]
+[['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['D'], ['L'], ['L', 'U']]
+[['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['R'], ['U'], ['U'], ['L']]
+When converging, the state (9,6) shown here as ['L', 'U'] is the final policy to converge. 
+When run at 8000 episodes (about 4.0s on my computer) there is still a small chance of the final policy returning only ['U'] in this state.
+When run at lower episodes this may also return only ['L'] (around 5000 episodes 2.6s) and past 8000 episodes it becomes very rare not to get ['L', 'U'].
+With a small amount of luck the optimal policy will can be found around 7000 episodes. 
+Overall you can run at 7000 episodes if you don't care about the double action, and 9000 if you want a more consistant convergence. 
+Overall maximum runtime is less that 5.0s, (this helps to measure the number of steps per episode, longer time for same number of episodes points to longer episodes).
+Results:
+~ 9000 for consistant convergence
+< 5.56 x 10^-4 avg seconds per episode.
+optimal policy takes 15 steps to reach goal
+
+Sarsa algorithm optimal policy
+
+When compared to the Q-Learning algorithm, Sarsa falls far behind in the required number episodes to converge
